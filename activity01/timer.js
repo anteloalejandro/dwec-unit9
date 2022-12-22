@@ -1,7 +1,7 @@
 export function timer(time) {
   const promise = new Promise((onresolve, onreject) => {
     var tmp = setTimeout(() => {
-      onresolve('Time elapsed')
+      onresolve('Time elapsed: '+(time/1000)+'s')
       clearTimeout(tmp)
     }, time)
 

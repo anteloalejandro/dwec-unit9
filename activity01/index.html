@@ -5,9 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="./timer.js"></script>
+  <script defer type="module">
+    import {timer} from './timer.js'
+    const e = document.querySelector('h1')
+    timer(2000)
+      .then(result => { e.textContent = result })
+      .catch(result => { e.textContent = result })
+  </script>
 </head>
 <body>
-  <script>timer(1000)</script>
+  <h1 style="font-family: sans-serif;">Waiting...</h1>
 </body>
 </html>
