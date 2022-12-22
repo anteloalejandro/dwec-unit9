@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0; margin: 0;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 30px
+    }
+  </style>
+  <script defer type="module">
+    import {timer, countdown} from './timer.js'
+    const e = document.querySelector('h1')
+    const counter = document.getElementById('counter')
+
+    countdown(10, counter, () => {timer(2000, e, 'Nothing happened, hooray!')}, 500)
+  </script>
+</head>
+<body>
+  <h1>Loading will begin in... <span id="counter"></span></h1>
+</body>
+</html>
