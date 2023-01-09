@@ -8,15 +8,15 @@ function timer(time, element, output = 'Time elapsed: '+(time/1000)+'s') {
   const promise = new Promise((onresolve, onreject) => {
     // Create a timer that resolves the promise once the specified time passes
     var tmp = setTimeout(() => {
+      clearTimeout(wtf)
       onresolve(output)
-      clearTimeout(tmp)
     }, time)
 
     // This timer won't finish before the last one,
     // but if it did, it the promise would be rejected
     var wtf = setTimeout(() => {
+      clearTimeout(tmp)
       onreject("Time's glitched, it must've been written in JavaScript")
-      clearTimeout(wtf)
     }, time*2)
   })
 
